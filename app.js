@@ -177,7 +177,7 @@ fetchData('https://api.covid19api.com/countries').then(countriesData =>{
 });
 
 //get states, codes and update select states element
-fetchData('http://localhost/covid19-tracker/indian-states.json').then(statesData =>{
+fetchData('https://jaswanth431.github.io//indian-states.json').then(statesData =>{
   var  options = "<option value=''>Select State/Union Teritory</option>";
   statesData.state.forEach(item=>options += `<option value='${item.key}'>${item.name}</option>`);
   //updating the select element country list
