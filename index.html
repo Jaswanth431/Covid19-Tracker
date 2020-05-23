@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Covid19 Tracker</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<script src="https://code.highcharts.com/stock/highstock.js"></script>
+	<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+	<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+	<script src="indiaGeoJson.js"></script>
+	<script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
+</head>
+<body>
+	<header class="header">
+			<nav>
+				<div class="left-box">
+					<h2 class="main-heading">
+						<span class="heading-first-letter">C</span><span class="img-box"><img src="img/logo1.png" alt="Logo"></span>VID19 <span class="sub-heading">TRACKER</span>
+					</h2>
+				</div>
+				<div class="right-box">
+					<ul class="navigation">
+						<li>
+							<a href="">World</a>
+						</li>
+						<li>
+							<a href="">India</a>
+						</li><li>
+							<a href="">Do's And Dont's
+							</a>
+						</li><li>
+							<a href="">Developer</a>
+						</li>
+						
+					</ul>
+				</div>
+				
+			</nav>
+			<div class="content-box">
+				<h1>Real time Covid19 Statistics</h1>
+				<h2>Get country and state wise data</h2>
+				<a class="btn btn-full" href="#world">World</a>
+				<a class="btn btn-light" href="#india">India</a>
+
+			</div>
+	</header>
+	<main class="main">
+		<section class="section-world-map" id="world">
+			<h1 class="section-heading">World Covid cases</h1>
+			<div class="global-stats">
+				<div class="confirmed-box number-box">
+					<p class="number-type">Total Confirmed</p>
+					<p class="number-count">0</p>
+				</div>
+				<div class="active-box number-box">
+					<p class="number-type">Total Active</p>
+					<p class="number-count">0</p>
+				</div>
+				<div class="recovered-box number-box">
+					<p class="number-type">Total Recovered</p>
+					<p class="number-count">0</p>
+				</div>
+				<div class="deaths-box number-box">
+					<p class="number-type">Total Deaths</p>
+					<p class="number-count">0</p>
+				</div>
+				
+
+
+			</div>
+			<div id="world-map"></div>
+		</section>
+		<section class="section-country-chart">
+			<h1 class="section-heading color-white">Country wise stats</h1>
+			<div class="select-box">
+				<select id="select-country" class='select-country'>
+					<option value="">Select country</option>
+				</select>
+				<a id="get-country-stats-btn" href="javascript:void(0);" class="btn btn-full">Get Data</a>
+			</div>
+			<div class="country-stats">
+				<div class="confirmed-box number-box">
+					<p class="number-type">Total Confirmed</p>
+					<p class="number-count">0</p>
+				</div>
+				<div class="active-box number-box">
+					<p class="number-type">Total Active</p>
+					<p class="number-count">0</p>
+				</div>
+				<div class="recovered-box number-box">
+					<p class="number-type">Total Recovered</p>
+					<p class="number-count">0</p>
+				</div>
+				<div class="deaths-box number-box">
+					<p class="number-type">Total Deaths</p>
+					<p class="number-count">0</p>
+				</div>
+			</div>
+			<div id="country-cases-graph"></div>
+
+		</section>
+		<section class="section-india-map" id="india">
+			<h1 class="section-heading">Indian Covid cases</h1>
+			<div class="indian-stats">
+				<div class="confirmed-box number-box">
+					<p class="number-type">Total Confirmed</p>
+					<p class="number-count">0</p>
+				</div>
+				<div class="active-box number-box">
+					<p class="number-type">Total Active</p>
+					<p class="number-count">0</p>
+				</div>
+				<div class="recovered-box number-box">
+					<p class="number-type">Total Recovered</p>
+					<p class="number-count">0</p>
+				</div>
+				<div class="deaths-box number-box">
+					<p class="number-type">Total Deaths</p>
+					<p class="number-count">0</p>
+				</div>
+			</div>
+			<div id="india-map"></div>
+
+		</section>
+		<section class="section-state-chart">
+			<h1 class="section-heading color-white">Covid cases in Indian states</h1>
+			<div class="select-box">
+				<select id="select-state" class='select-state'>
+					<option value="">Select State</option>
+				</select>
+				<a id="get-state-stats-btn" href="javascript:void(0);" class="btn btn-full">Get Data</a>
+			</div>
+			<div class="state-stats">
+				<div class="confirmed-box number-box">
+					<p class="number-type">Total Confirmed</p>
+					<p class="number-count">0</p>
+				</div>
+				<div class="active-box number-box">
+					<p class="number-type">Total Active</p>
+					<p class="number-count">0</p>
+				</div>
+				<div class="recovered-box number-box">
+					<p class="number-type">Total Recovered</p>
+					<p class="number-count">0</p>
+				</div>
+				<div class="deaths-box number-box">
+					<p class="number-type">Total Deaths</p>
+					<p class="number-count">0</p>
+				</div>
+			</div>
+		</section>
+		<section class="section-dos-donts">
+			<h1 class="section-heading">Do's and Dont's</h1>
+			<div class="do-dont-box">
+				<div class="do-box">
+					<h3>Do's</h3>
+					<ul>
+						<li>DO wash your hands for at least 20 seconds, several times a day.</li>
+						<li>DO consider taking extra precautions and staying out of public places if you’re over 60 years old.</li>
+						<li>DO practice “social distancing”: Stay 3- to 6-feet away from other people, especially if they're coughing or sneezing.</li>
+						<li>DO prioritize your health. Now is not the time to burn the candle at both ends, skip workouts, or ignore a healthy diet—that can weaken your immune system</li>
+						<li>DO seek help early if you have a fever, cough, and a hard time breathing. </li>
+						<li>DO cough or sneeze into the crook of your elbow or a tissue, and dispose of the tissue immediately in a covered bin.</li>
+					</ul>
+				</div>
+				<div class="dont-box">
+					<h3>Dont's</h3>
+					<ul>
+						<li>DON’T touch your eyes, nose, and mouth</li>
+						<li>DON’T wear a mask unless you’re sick. Masks help protect others from catching the virus, but wearing one when you’re healthy won’t do much</li>
+						<li>DON’T assume young people won’t get gravely ill or even die. As of March 16, 38% of all hospitalizations were of people 20-to-54 years old.</li>
+						<li>DON’T go to the doctor unless it’s urgent.</li>
+						<li>DON’T hang out with your family or pets if you suspect you have the virus.</li>
+						<li>DON’T hesitate to seek help immediately if someone in your home is experiencing  warning signs</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<p>All rights reserved @ Jaswanth Kumar Jadda</p>
+	</footer>
+</body>
+<script src="app.js"></script>
+	
+
+</html>
+
+<!-- <div id="world-map"></div>
+<select id="select-country">
+	<option value="">Select country</option>
+</select>
+<button id="get-country-stats-btn">Get Data</button>
+
+<select id="select-state">
+	<option value="">Select State/Union teritory</option>
+</select>
+<button id="get-state-stats-btn">Get Data</button>
+<div id="state-cases-graph"></div> -->

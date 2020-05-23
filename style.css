@@ -1,0 +1,400 @@
+*,
+*::after,
+*::before{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size:62.5%;
+  font-weight:400;
+  font-family: Lato, Arial;
+}
+
+
+/************header**************/
+
+.header{
+  width:100wh;
+  height:100vh;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0,0,0, 0.8), rgba(0,0,0, 0.8)), url('img/bg.jpg');
+  position: relative;
+
+}
+
+nav{
+  display:flex;
+  height:8rem;
+  align-items: center;
+  justify-content: space-between;
+  color:#fff;
+  padding-top:1px;
+}
+
+.img-box{
+  height:3rem;
+  display: inline-block;
+  
+}
+
+.img-box img{
+  height:100%;
+}
+
+.main-heading{
+  font-size:3rem;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  margin-left:8rem;
+
+}
+
+.heading-first-letter{
+  font-size: 6rem;
+  display: inline-block;
+}
+.sub-heading{
+  color: #D33C00;
+  margin-left: 1rem;
+}
+
+.navigation{
+  list-style: none;
+  margin-right:6rem;
+}
+.navigation li{
+  display:inline-block;
+  margin-right: 3rem;
+}
+
+.navigation li a:link,
+.navigation li a:visited{
+  text-decoration: none;
+  color:#fff;
+  display: inline-block;
+  font-size: 1.6rem;
+  padding-bottom:1rem;
+  border-bottom: 2px solid transparent;
+  transition: all .2s;
+
+}
+
+.navigation li a:hover,
+.navigation li a:active{
+  border-bottom: 2px solid #D33C00;
+}
+
+.content-box{
+  position: absolute;
+  top:45%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  color:#fff;
+  text-align: center;
+}
+
+.content-box h1{
+  font-size: 5rem;
+  font-weight: 300;
+  min-width:77rem;
+}
+
+.content-box h2{
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.content-box a{
+  margin-right: 2rem;
+}
+.btn:link,
+.btn:visited{
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.6rem;
+  padding:1rem 2rem;
+  color: #fff;
+  transition: all .2s;
+}
+
+
+.btn-full{
+  background-color: #d33c00;
+  border: 2px solid #fff;
+  border-radius:4px;
+}
+
+.btn-light{
+  border: 2px solid #D33C00;
+  border-radius:2px;
+}
+
+.btn-light:hover,
+.btn-light:active{
+  background-color: #d33c00;
+  border: 2px solid #fff;
+}
+
+/************section world data*************/
+
+section{
+  padding:5rem;
+  text-align: center;
+}
+
+.section-heading{
+  font-size: 3rem;
+}
+
+.section-heading::after{
+  content:"";
+  display:block;
+  width:15rem;
+  height:2px;
+  background-color: #D33C00;
+  margin:0 auto;
+  margin-top:1rem;
+}
+
+#world-map,
+#india-map{
+  width: 90% ;
+  margin-left:5%;
+  height:60rem;
+  box-shadow: 5px 5px 1.5rem rgba(0,0,0, 0.2),-5px -5px 1rem rgba(0,0,0, 0.2);
+  margin-top:3rem;
+}
+
+.global-stats,
+.country-stats,
+.indian-stats,
+.state-stats{
+  width:66%;
+  margin-left: 17%;
+  display:flex;
+  justify-content: space-between;
+  margin-top:3rem;
+}
+
+.number-box{
+  padding:3rem;
+  color:#fff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 1.5rem rgba(0,0,0, 0.2),-5px -5px 1rem rgba(0,0,0, 0.2);
+  transition: all .2s;
+}
+
+.number-box:hover{
+  transform: scale(1.2);
+}
+.number-type{
+  font-size:1.8rem;
+  font-weight: 500;
+  margin-bottom:1rem;
+}
+.number-count{
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.confirmed-box{
+  background-image: linear-gradient(to bottom right, rgb(130, 130, 255), rgb(0, 0, 255));
+}
+
+.recovered-box{
+  background-image: linear-gradient(to bottom right, rgb(163, 255, 134), rgb(8, 228, 0));
+}
+
+.deaths-box{
+  background-image: linear-gradient(to bottom right, rgb(255, 110, 110), rgb(255, 5, 5));
+
+}
+
+.active-box{
+  background-image: linear-gradient(to bottom right, rgb(255, 129, 79), rgb(211, 60, 0));
+
+}
+
+/**************Section conuntry chart*********/
+.section-country-chart{
+  background-image: url('img/bg1.jpg');
+  background-size: cover;
+  background-image: linear-gradient(rgba(0,0,0, 0.8), rgba(0,0,0, 0.8)), url('img/bg.jpg');
+}
+
+.color-white{
+  color:#fff;
+}
+.select-box{
+  margin-top:2rem;
+}
+
+.select-country,
+.select-state{
+  width:35rem;
+  padding: 1rem;
+  border-radius:4px;
+  margin-right: 2rem;
+}
+
+#country-cases-graph{
+  margin-top:2rem;
+  /* animation: slidein 0.5s forwards; */
+  transition: all 0.2;
+}
+
+
+.section-state-chart{
+  background-image: url('img/bg2.jpg');
+  background-size: cover;
+  background-image: linear-gradient(rgba(0,0,0, 0.8), rgba(0,0,0, 0.8)), url('img/bg.jpg');
+}
+
+
+/***************section do's and dont's************/
+.do-dont-box {
+  display:flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-left:10%;
+  margin-top:3rem;
+}
+
+.do-dont-box h3{
+  font-size:1.8rem;
+  font-weight: 500;
+}
+
+.do-dont-box h3:after{
+  content:"";
+  display:block;
+  width:5rem;
+  height:2px;
+  background-color: #D33C00;
+  margin:0 auto;
+  margin-top:1rem;
+}
+.do-box,
+.dont-box{
+  width:40%;
+  box-shadow: 5px 5px 1rem rgba(0,0,0, 0.2),-5px -5px 1rem rgba(0,0,0, 0.2);
+  padding:5rem;
+}
+
+.do-box ul,
+.dont-box ul{
+  display: flex;
+  flex-direction: column;
+  margin-top:1rem;
+}
+
+.do-box ul li,
+.dont-box ul li{
+  font-size:1.6rem;
+  text-decoration-color: #d33c00;
+  margin-bottom:1rem;
+  list-style-type:none;
+  text-align: justify;
+
+}
+
+.do-box ul li::before,
+.dont-box ul li::before {
+  content: "•";
+   color: #d33c00;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em}
+
+/*******footer*********/
+footer{
+  padding:3rem;
+  background-color: #2c2c2c;
+  color:rgb(110, 110, 110);
+  text-align: center;
+  font-size:1.6rem;
+}
+/*******tooltip**********/
+
+.tooltip_hover{
+  display: inline-block;
+  padding:1rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+
+
+.tooltip_hover .total{
+  display: block;
+  font-size:1.5rem;
+  font-weight: 400;
+}
+.country-name{
+  color:#000;
+}
+.confirmed{
+  color:blue;
+}
+
+.recovered{
+  color:green;
+}
+
+.deaths{
+  color:red;
+}
+
+.new{
+  font-weight: 500;
+}
+
+/***********media queries**********/
+@media only screen and (max-width: 1200px){
+  .do-dont-box{
+    width:94%;
+    margin-left:3%;
+  }
+
+  .do-box,
+  .dont-box{
+    width:47%;
+  }
+
+  .global-stats,
+  .country-stats,
+  .indian-stats,
+  .state-stats{
+    width:80%;
+    margin-left: 10%;
+  }
+}
+
+@media only screen and (max-width: 1024px){
+  .do-dont-box{
+    width:96%;
+  }
+
+  .do-box,
+  .dont-box{
+    width:48%;
+  }
+  .global-stats,
+  .country-stats,
+  .indian-stats,
+  .state-stats{
+    width:100%;
+  margin-left: 0;
+
+  }
+
+  #world-map,
+  #india-map{
+    width:100%;
+    margin-left:0;
+  }
+}
