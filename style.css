@@ -11,7 +11,29 @@ html{
   font-weight:400;
   font-family: Lato, Arial;
 }
-
+/***********keyframes************/
+@keyframes slideIn {
+  0.0%{
+      opacity: 0;
+      top: -100%;
+      right: 0;
+  }
+  100%{
+      opacity: 1;
+      top: 8rem;
+      right: 0;
+  }
+  29.7%{
+      opacity: 0;
+      top: 40%;
+      right: 0;
+  }
+  3.8%{
+      opacity: 0;
+      top: -100%;
+      right: 0;
+  }
+}
 
 /************header**************/
 
@@ -26,11 +48,9 @@ html{
 
 nav{
   display:flex;
-  height:8rem;
   align-items: center;
   justify-content: space-between;
   color:#fff;
-  padding-top:1px;
 }
 
 .img-box{
@@ -86,6 +106,36 @@ nav{
 .navigation li a:active{
   border-bottom: 2px solid #D33C00;
 }
+
+.toggle-menu{
+  display: inline-block;
+  margin-top: 3rem;
+
+}
+
+.line{
+  width:3.5rem;
+  height:3px;
+  background-color: #fff;
+  margin-bottom: 7px;
+  margin-right: 3rem;
+  display: none;
+  transition: all .2s;
+
+}
+.add-line2{
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+.add-line1{
+  transform: rotate(45deg);
+}
+
+.add-line3{
+  opacity: 0;
+  visibility: hidden;
+}
+
+
 
 .content-box{
   position: absolute;
@@ -397,4 +447,155 @@ footer{
     width:100%;
     margin-left:0;
   }
+
+  .main-heading{
+    margin-left:4rem;
+  }
+
+  .navigation{
+    margin-right:3rem;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .img-box{
+    height:2rem;
+  }
+  
+  .main-heading{
+    font-size:2rem;
+    margin-left:2rem;
+  }
+  
+  .heading-first-letter{
+    font-size: 4rem;
+  }
+
+  .navigation{
+    display: none;
+  }
+
+  
+  .content-box h1{
+    font-size: 3rem;
+    font-weight: 300;
+  }
+  
+  .content-box h2{
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  nav{
+    align-items: baseline;
+    padding-top:2rem;
+  }
+  .navigation{
+    margin-right: 0;
+    display: block;
+    position: absolute;
+    top:-100%;
+    right:0;
+  }
+  .add-navigation{
+    animation: slideIn .5s;
+    top:8rem;
+  }
+  .navigation li{
+    display:block;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .navigation li a:link,
+  .navigation li a:visited{
+    color:#fff;
+    display: block;
+    font-size: 1.6rem;
+  }
+  .line{
+    display: block;
+  }
+
+  .global-stats,
+.country-stats,
+.indian-stats,
+.state-stats{
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.number-box{
+  margin-bottom:2rem;
+}
+#world-map{
+  height:40rem;
+}
+
+.select-country,
+.select-state{
+  width:25rem;
+}
+
+section{
+  padding:4rem 2rem; 
+}
+
+.do-dont-box{
+  flex-direction: column;
+}
+
+.do-box,
+.dont-box{
+  width:100%;
+  margin-bottom:2rem;
+}
+
+}
+
+@media only screen and (max-width:480px){
+  section{
+    padding:3rem 1rem;
+  }
+  .content-box h1{
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+  .content-box{
+    top:50%;
+  }
+  
+  .content-box h2{
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .section-heading{
+    font-size: 2.5rem;
+  }
+
+  .number-box{
+    padding:1rem;
+  }
+
+  .select-country,
+  .select-state{
+    width:100%;
+    margin-bottom:2rem;
+  }
+
+  #india-map{
+    height: 45rem;
+  }
+
+  .do-box,
+  .dont-box{
+    padding:2rem;
+  }
+
+
 }

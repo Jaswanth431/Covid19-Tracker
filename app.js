@@ -119,7 +119,6 @@ fetchData('https://api.covid19india.org/data.json').then(indiaRawData=>{
             st[temp.stateCode].recovered =item.recovered;
             st[temp.stateCode].deaths =  item.deaths;
     });
-    console.log(st);
     getStateData(st);
     var max = covidIndiaData[1].value;
     //creating the chart
