@@ -14,7 +14,7 @@ async function fetchData(url){
 fetchData('https://api.covid19api.com/summary').then(worldRawData=>{
   var covidWorldData = [], temp, min=1, max =1;
   //updating global statistics
-  document.querySelector('.global-stats .confirmed-box .number-count').innerHTML = worldRawData.Global.TotalConfirmed;
+ document.querySelector('.global-stats .confirmed-box .number-count').innerHTML = worldRawData.Global.TotalConfirmed;
   document.querySelector('.global-stats .recovered-box .number-count').innerHTML = worldRawData.Global.TotalRecovered;
   document.querySelector('.global-stats .deaths-box .number-count').innerHTML = worldRawData.Global.TotalDeaths;
   document.querySelector('.global-stats .active-box .number-count').innerHTML = worldRawData.Global.TotalConfirmed - worldRawData.Global.TotalRecovered - worldRawData.Global.TotalDeaths;
@@ -293,3 +293,70 @@ function getStateData(data){
   });
 }
 
+
+/***********general dom manipulatin and animation effects with jquery*********/
+//enabling toggle menu to disable and enable on clicking toggle icon
+
+function updateCounter(ele){
+    var target = +$(ele).attr("data-target");
+    var curr  = +$(ele).text();
+    var inc = target/20;
+    if(curr<target){
+      $(ele).text(curr + inc);
+      setTimeout(updateCounter, 1, ele);
+    }else{
+      $(ele).text(target);
+    }
+}
+
+
+$(document).ready(()=>{
+  $(".toggle-menu").click(()=>{
+    var ele = $(".toggle-menu").hasClass("added");
+    if(ele){
+      $(".toggle-menu").removeClass("added");
+      $(".navigation").removeClass("add-navigation");
+      $(".line1").removeClass("add-line1");
+      $(".line2").removeClass("add-line2");
+      $(".line3").removeClass("add-line3");
+
+    }else{
+      $(".toggle-menu").addClass("added");
+      $(".navigation").addClass("add-navigation");
+      $(".line1").addClass("add-line1");
+      $(".line2").addClass("add-line2");
+      $(".line3").addClass("add-line3");
+    }
+  });
+
+  //smooth scroll
+$('a[href*="#"]')
+.not('[href="#"]')
+.not('[href="#0"]')
+.click(function(event) {
+  if (
+    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+    && 
+    location.hostname == this.hostname
+  ) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    if (target.length) {
+      event.preventDefault();
+      $('html, body').animate({
+        scrollTop: target.offset().top 
+      }, 1000, function() {
+        var $target = $(target);
+        $target.focus();
+        if ($target.is(":focus")) { 
+          return false;
+        } else {
+          $target.attr('tabindex','-1');
+          $target.focus();
+        };
+      });
+    }
+  }
+  });
+
+});
