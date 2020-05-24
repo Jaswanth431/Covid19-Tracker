@@ -453,11 +453,15 @@ section{
 
 /*******footer*********/
 footer{
-  padding:3rem;
+  padding:1.5rem;
   background-color: #2c2c2c;
-  color:rgb(110, 110, 110);
+  color:rgb(143, 143, 143);
   text-align: center;
   font-size:1.6rem;
+}
+
+footer p:not(:last-child){
+  margin-bottom: 1rem;
 }
 /*******tooltip**********/
 
